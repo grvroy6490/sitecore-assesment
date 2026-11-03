@@ -1,0 +1,41 @@
+# A small Experience-Edge-style schema. Read it, then do Task 4 in TASKS.md.
+
+type Query {
+  """One doctor by id. Null if not found."""
+  doctor(id: ID!): Doctor
+
+  """Doctors, optionally filtered by specialty. Paged with a cursor."""
+  doctors(specialty: String, first: Int = 10, after: String): DoctorConnection!
+}
+
+type Doctor {
+  id: ID!
+  name: TextField!
+  specialty: TextField
+  photo: ImageField
+  bio: RichTextField
+}
+
+type TextField {
+  value: String
+}
+
+type RichTextField {
+  value: String
+}
+
+type ImageField {
+  src: String
+  alt: String
+}
+
+type DoctorConnection {
+  total: Int!
+  pageInfo: PageInfo!
+  results: [Doctor!]!
+}
+
+type PageInfo {
+  endCursor: String
+  hasNext: Boolean!
+}

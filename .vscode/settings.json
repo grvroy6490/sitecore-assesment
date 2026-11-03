@@ -1,0 +1,8 @@
+{
+  "github.copilot.enable": { "*": false },
+  "github.copilot.editor.enableAutoCompletions": false,
+  "editor.inlineSuggest.enabled": false,
+  "chat.disableAIFeatures": true,
+  "codeium.enableCodeLens": false,
+  "tabnine.experimentalAutoImports": false
+}
